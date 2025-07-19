@@ -67,28 +67,28 @@ const Index = () => {
               Платформа для онлайн обучения с интерактивными курсами, тестированием и персональным подходом
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                className="bg-blue-600 hover:bg-blue-700"
+              <button 
+                className="inline-flex items-center justify-center gap-2 h-11 rounded-md px-8 bg-blue-600 text-white hover:bg-blue-700 transition-colors font-medium"
                 onClick={() => {
                   console.log('Clicked start learning');
+                  alert('Start learning clicked!');
                   setActiveTab('courses');
                 }}
               >
                 <Icon name="Play" size={20} className="mr-2" />
                 Начать обучение
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline"
+              </button>
+              <button 
+                className="inline-flex items-center justify-center gap-2 h-11 rounded-md px-8 border border-gray-300 bg-white hover:bg-gray-50 transition-colors font-medium"
                 onClick={() => {
                   console.log('Clicked catalog');
+                  alert('Catalog clicked!');
                   setActiveTab('courses');
                 }}
               >
                 <Icon name="BookOpen" size={20} className="mr-2" />
                 Каталог курсов
-              </Button>
+              </button>
             </div>
           </div>
         </section>
