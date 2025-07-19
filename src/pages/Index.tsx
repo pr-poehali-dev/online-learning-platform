@@ -15,6 +15,7 @@ import AdminSection from '@/components/AdminSection';
 const Index = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [isAdmin, setIsAdmin] = useState(false);
+  const [activeTab, setActiveTab] = useState('courses');
   const [courses, setCourses] = useState([
     {
       id: 1,
@@ -69,10 +70,7 @@ const Index = () => {
               <Button 
                 size="lg" 
                 className="bg-blue-600 hover:bg-blue-700"
-                onClick={() => {
-                  const coursesTab = document.querySelector('[data-value="courses"]') as HTMLElement;
-                  if (coursesTab) coursesTab.click();
-                }}
+                onClick={() => setActiveTab('courses')}
               >
                 <Icon name="Play" size={20} className="mr-2" />
                 Начать обучение
@@ -80,10 +78,7 @@ const Index = () => {
               <Button 
                 size="lg" 
                 variant="outline"
-                onClick={() => {
-                  const coursesTab = document.querySelector('[data-value="courses"]') as HTMLElement;
-                  if (coursesTab) coursesTab.click();
-                }}
+                onClick={() => setActiveTab('courses')}
               >
                 <Icon name="BookOpen" size={20} className="mr-2" />
                 Каталог курсов
@@ -106,7 +101,7 @@ const Index = () => {
           </div>
         </section>
 
-        <Tabs defaultValue="courses" className="mb-8">
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="mb-8">
           <TabsList className="grid w-full grid-cols-4 lg:grid-cols-8 mb-8">
             <TabsTrigger value="courses">Курсы</TabsTrigger>
             <TabsTrigger value="testing">Тестирование</TabsTrigger>
