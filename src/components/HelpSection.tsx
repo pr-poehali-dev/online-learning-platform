@@ -1,4 +1,3 @@
-import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Icon from '@/components/ui/icon';
 
@@ -42,18 +41,18 @@ const HelpSection = () => {
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              <Button className="w-full" variant="outline">
+              <button className="w-full inline-flex items-center justify-center h-10 rounded-md px-4 border border-gray-300 bg-white hover:bg-gray-50 transition-colors font-medium">
                 <Icon name="Mail" size={20} className="mr-2" />
                 support@eduplatform.com
-              </Button>
-              <Button className="w-full" variant="outline">
+              </button>
+              <button className="w-full inline-flex items-center justify-center h-10 rounded-md px-4 border border-gray-300 bg-white hover:bg-gray-50 transition-colors font-medium">
                 <Icon name="Phone" size={20} className="mr-2" />
                 +7 (800) 123-45-67
-              </Button>
-              <Button className="w-full" variant="outline">
+              </button>
+              <button className="w-full inline-flex items-center justify-center h-10 rounded-md px-4 border border-gray-300 bg-white hover:bg-gray-50 transition-colors font-medium">
                 <Icon name="MessageSquare" size={20} className="mr-2" />
                 Онлайн чат
-              </Button>
+              </button>
             </div>
           </CardContent>
         </Card>

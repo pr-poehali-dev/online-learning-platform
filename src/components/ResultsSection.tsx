@@ -1,4 +1,3 @@
-import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
@@ -46,9 +45,9 @@ const ResultsSection = ({ testResults }: ResultsSectionProps) => {
                   <Badge variant={result.score >= 90 ? 'default' : result.score >= 70 ? 'secondary' : 'destructive'}>
                     {result.score >= 90 ? 'Отлично' : result.score >= 70 ? 'Хорошо' : 'Требует улучшения'}
                   </Badge>
-                  <Button variant="outline" size="sm">
+                  <button className="inline-flex items-center justify-center h-8 rounded-md px-3 border border-gray-300 bg-white hover:bg-gray-50 transition-colors">
                     <Icon name="Eye" size={16} />
-                  </Button>
+                  </button>
                 </div>
               </div>
             ))}

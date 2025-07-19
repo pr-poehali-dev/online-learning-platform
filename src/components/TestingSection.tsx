@@ -1,4 +1,3 @@
-import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Icon from '@/components/ui/icon';
 
@@ -22,21 +21,21 @@ const TestingSection = () => {
                   <h4 className="font-semibold">Основы Python</h4>
                   <p className="text-sm text-gray-600">20 вопросов • 30 минут</p>
                 </div>
-                <Button size="sm">Пройти</Button>
+                <button className="inline-flex items-center justify-center h-8 rounded-md px-3 bg-blue-600 text-white hover:bg-blue-700 transition-colors text-sm font-medium">Пройти</button>
               </div>
               <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
                 <div>
                   <h4 className="font-semibold">HTML/CSS</h4>
                   <p className="text-sm text-gray-600">15 вопросов • 25 минут</p>
                 </div>
-                <Button size="sm">Пройти</Button>
+                <button className="inline-flex items-center justify-center h-8 rounded-md px-3 bg-blue-600 text-white hover:bg-blue-700 transition-colors text-sm font-medium">Пройти</button>
               </div>
               <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
                 <div>
                   <h4 className="font-semibold">JavaScript</h4>
                   <p className="text-sm text-gray-600">25 вопросов • 40 минут</p>
                 </div>
-                <Button size="sm">Пройти</Button>
+                <button className="inline-flex items-center justify-center h-8 rounded-md px-3 bg-blue-600 text-white hover:bg-blue-700 transition-colors text-sm font-medium">Пройти</button>
               </div>
             </div>
           </CardContent>
