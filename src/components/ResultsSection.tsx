@@ -45,7 +45,10 @@ const ResultsSection = ({ testResults }: ResultsSectionProps) => {
                   <Badge variant={result.score >= 90 ? 'default' : result.score >= 70 ? 'secondary' : 'destructive'}>
                     {result.score >= 90 ? 'Отлично' : result.score >= 70 ? 'Хорошо' : 'Требует улучшения'}
                   </Badge>
-                  <button className="inline-flex items-center justify-center h-8 rounded-md px-3 border border-gray-300 bg-white hover:bg-gray-50 transition-colors">
+                  <button 
+                    className="inline-flex items-center justify-center h-8 rounded-md px-3 border border-gray-300 bg-white hover:bg-gray-50 transition-colors"
+                    onClick={() => alert(`Подробная информация о тесте: ${result.name}`)}
+                  >
                     <Icon name="Eye" size={16} />
                   </button>
                 </div>

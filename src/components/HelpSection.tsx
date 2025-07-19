@@ -41,15 +41,24 @@ const HelpSection = () => {
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              <button className="w-full inline-flex items-center justify-center h-10 rounded-md px-4 border border-gray-300 bg-white hover:bg-gray-50 transition-colors font-medium">
+              <button 
+                className="w-full inline-flex items-center justify-center h-10 rounded-md px-4 border border-gray-300 bg-white hover:bg-gray-50 transition-colors font-medium"
+                onClick={() => window.open('mailto:support@eduplatform.com')}
+              >
                 <Icon name="Mail" size={20} className="mr-2" />
                 support@eduplatform.com
               </button>
-              <button className="w-full inline-flex items-center justify-center h-10 rounded-md px-4 border border-gray-300 bg-white hover:bg-gray-50 transition-colors font-medium">
+              <button 
+                className="w-full inline-flex items-center justify-center h-10 rounded-md px-4 border border-gray-300 bg-white hover:bg-gray-50 transition-colors font-medium"
+                onClick={() => window.open('tel:+78001234567')}
+              >
                 <Icon name="Phone" size={20} className="mr-2" />
                 +7 (800) 123-45-67
               </button>
-              <button className="w-full inline-flex items-center justify-center h-10 rounded-md px-4 border border-gray-300 bg-white hover:bg-gray-50 transition-colors font-medium">
+              <button 
+                className="w-full inline-flex items-center justify-center h-10 rounded-md px-4 border border-gray-300 bg-white hover:bg-gray-50 transition-colors font-medium"
+                onClick={() => alert('Чат с поддержкой открывается...')}
+              >
                 <Icon name="MessageSquare" size={20} className="mr-2" />
                 Онлайн чат
               </button>
