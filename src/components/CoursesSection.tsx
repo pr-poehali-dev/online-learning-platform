@@ -28,10 +28,10 @@ const CoursesSection = ({ courses, isAdmin, setActiveTab }: CoursesSectionProps)
       <div className="flex justify-between items-center mb-8">
         <h3 className="text-3xl font-bold text-gray-900">Доступные курсы</h3>
         {isAdmin && (
-          <Button>
+          <button className="inline-flex items-center justify-center gap-2 h-10 rounded-md px-4 py-2 bg-blue-600 text-white hover:bg-blue-700 transition-colors font-medium">
             <Icon name="Plus" size={20} className="mr-2" />
             Добавить курс
-          </Button>
+          </button>
         )}
       </div>
 
@@ -73,16 +73,14 @@ const CoursesSection = ({ courses, isAdmin, setActiveTab }: CoursesSectionProps)
                 <Progress value={course.progress} className="h-2" />
                 
                 <div className="flex gap-2 pt-2">
-                  <Button 
-                    className="flex-1" 
-                    size="sm"
+                  <button 
+                    className="flex-1 inline-flex items-center justify-center h-9 rounded-md px-3 bg-blue-600 text-white hover:bg-blue-700 transition-colors font-medium text-sm"
                     onClick={() => setActiveTab('testing')}
                   >
                     {course.progress > 0 ? 'Продолжить' : 'Начать'}
-                  </Button>
-                  <Button 
-                    variant="outline" 
-                    size="sm"
+                  </button>
+                  <button 
+                    className="inline-flex items-center justify-center h-9 rounded-md px-3 border border-gray-300 bg-white hover:bg-gray-50 transition-colors text-sm"
                     onClick={() => alert('Подробная информация о курсе')}
                   >
                     <Icon name="BookOpen" size={16} />

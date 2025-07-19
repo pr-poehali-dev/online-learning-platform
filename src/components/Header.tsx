@@ -31,18 +31,24 @@ const Header = ({ isAdmin, setIsAdmin, setActiveTab }: HeaderProps) => {
           </nav>
 
           <div className="flex items-center space-x-4">
-            <Button
-              variant={isAdmin ? "default" : "outline"}
-              size="sm"
+            <button
+              className={`inline-flex items-center justify-center gap-2 h-9 rounded-md px-3 text-sm font-medium transition-colors ${
+                isAdmin 
+                  ? 'bg-blue-600 text-white hover:bg-blue-700' 
+                  : 'border border-gray-300 bg-white hover:bg-gray-50'
+              }`}
               onClick={() => setIsAdmin(!isAdmin)}
             >
               <Icon name="Settings" size={16} className="mr-2" />
               {isAdmin ? 'Админ' : 'Войти как админ'}
-            </Button>
-            <Button size="sm" onClick={() => setActiveTab('profile')}>
+            </button>
+            <button 
+              className="inline-flex items-center justify-center gap-2 h-9 rounded-md px-3 text-sm font-medium border border-gray-300 bg-white hover:bg-gray-50 transition-colors"
+              onClick={() => setActiveTab('profile')}
+            >
               <Icon name="User" size={16} className="mr-2" />
               Профиль
-            </Button>
+            </button>
           </div>
         </div>
       </div>

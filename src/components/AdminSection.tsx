@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button } from '@/components/ui/button';
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -57,22 +57,21 @@ const AdminSection = ({ courses, onAddCourse, onDeleteCourse }: AdminSectionProp
           </CardHeader>
           <CardContent>
             <div className="space-y-3">
-              <Button 
-                className="w-full" 
-                variant="outline"
+              <button 
+                className="w-full inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
                 onClick={() => setShowCourseForm(!showCourseForm)}
               >
                 <Icon name="Plus" size={16} className="mr-2" />
                 {showCourseForm ? 'Скрыть форму' : 'Создать курс'}
-              </Button>
-              <Button className="w-full" variant="outline">
+              </button>
+              <button className="w-full inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
                 <Icon name="Edit" size={16} className="mr-2" />
                 Редактировать курсы
-              </Button>
-              <Button className="w-full" variant="outline">
+              </button>
+              <button className="w-full inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
                 <Icon name="Trash2" size={16} className="mr-2" />
                 Удалить курс
-              </Button>
+              </button>
             </div>
             
             {showCourseForm && (
@@ -136,10 +135,10 @@ const AdminSection = ({ courses, onAddCourse, onDeleteCourse }: AdminSectionProp
                   />
                 </div>
                 
-                <Button type="submit" className="w-full">
+                <button type="submit" className="w-full inline-flex items-center justify-center rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
                   <Icon name="Save" size={16} className="mr-2" />
                   Сохранить курс
-                </Button>
+                </button>
               </form>
             )}
           </CardContent>
@@ -163,13 +162,12 @@ const AdminSection = ({ courses, onAddCourse, onDeleteCourse }: AdminSectionProp
                       <span className="text-lg">{course.image}</span>
                       <span className="font-medium">{course.title}</span>
                     </div>
-                    <Button
-                      size="sm"
-                      variant="destructive"
+                    <button
+                      className="inline-flex items-center justify-center rounded-md bg-red-600 px-2 py-1 text-xs font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-colors"
                       onClick={() => onDeleteCourse(course.id)}
                     >
                       <Icon name="Trash2" size={14} />
-                    </Button>
+                    </button>
                   </div>
                 ))
               )}
@@ -186,18 +184,18 @@ const AdminSection = ({ courses, onAddCourse, onDeleteCourse }: AdminSectionProp
           </CardHeader>
           <CardContent>
             <div className="space-y-3">
-              <Button className="w-full" variant="outline">
+              <button className="w-full inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
                 <Icon name="UserPlus" size={16} className="mr-2" />
                 Добавить пользователя
-              </Button>
-              <Button className="w-full" variant="outline">
+              </button>
+              <button className="w-full inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
                 <Icon name="Eye" size={16} className="mr-2" />
                 Просмотр пользователей
-              </Button>
-              <Button className="w-full" variant="outline">
+              </button>
+              <button className="w-full inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
                 <Icon name="Settings" size={16} className="mr-2" />
                 Настройки ролей
-              </Button>
+              </button>
             </div>
           </CardContent>
         </Card>
@@ -219,10 +217,10 @@ const AdminSection = ({ courses, onAddCourse, onDeleteCourse }: AdminSectionProp
                 <div className="text-2xl font-bold text-green-600">89%</div>
                 <p className="text-sm text-gray-600">Средний прогресс</p>
               </div>
-              <Button className="w-full" variant="outline">
+              <button className="w-full inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
                 <Icon name="Download" size={16} className="mr-2" />
                 Скачать отчет
-              </Button>
+              </button>
             </div>
           </CardContent>
         </Card>
