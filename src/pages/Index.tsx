@@ -15,42 +15,34 @@ import AdminSection from '@/components/AdminSection';
 const Index = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [isAdmin, setIsAdmin] = useState(false);
-
-  const courses = [
+  const [courses, setCourses] = useState([
     {
       id: 1,
-      title: 'Основы программирования',
-      description: 'Изучите базовые принципы программирования на примере Python',
-      duration: '4 недели',
-      level: 'Начальный',
-      students: 1247,
-      rating: 4.8,
-      progress: 65,
-      image: '🐍'
-    },
-    {
-      id: 2,
-      title: 'Веб-разработка',
-      description: 'Создавайте современные веб-приложения с React и TypeScript',
-      duration: '8 недель',
-      level: 'Средний',
-      students: 892,
-      rating: 4.9,
-      progress: 32,
-      image: '🌐'
-    },
-    {
-      id: 3,
-      title: 'Анализ данных',
-      description: 'Работа с данными, визуализация и машинное обучение',
+      title: 'Смазка и контроль чистоты',
+      description: 'Основы смазочных материалов и методов контроля чистоты в промышленности',
       duration: '6 недель',
-      level: 'Продвинутый',
-      students: 456,
-      rating: 4.7,
+      level: 'Средний',
+      students: 234,
+      rating: 4.6,
       progress: 0,
-      image: '📊'
+      image: '🔧'
     }
-  ];
+  ]);
+
+  const handleAddCourse = (newCourse: Omit<{id: number; title: string; description: string; duration: string; level: string; students: number; rating: number; progress: number; image: string}, 'id' | 'students' | 'rating' | 'progress'>) => {
+    const course = {
+      ...newCourse,
+      id: Math.max(...courses.map(c => c.id), 0) + 1,
+      students: 0,
+      rating: 5.0,
+      progress: 0
+    };
+    setCourses([...courses, course]);
+  };
+
+  const handleDeleteCourse = (id: number) => {
+    setCourses(courses.filter(course => course.id !== id));
+  };
 
   const testResults = [
     { name: 'Основы Python', score: 95, date: '15.01.2024' },
@@ -145,7 +137,11 @@ const Index = () => {
 
           {isAdmin && (
             <TabsContent value="admin">
-              <AdminSection />
+              <AdminSection 
+                courses={courses}
+                onAddCourse={handleAddCourse}
+                onDeleteCourse={handleDeleteCourse}
+              />
             </TabsContent>
           )}
         </Tabs>
