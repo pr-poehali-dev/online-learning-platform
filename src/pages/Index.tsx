@@ -70,7 +70,10 @@ const Index = () => {
               <Button 
                 size="lg" 
                 className="bg-blue-600 hover:bg-blue-700"
-                onClick={() => setActiveTab('courses')}
+                onClick={() => {
+                  console.log('Clicked start learning');
+                  setActiveTab('courses');
+                }}
               >
                 <Icon name="Play" size={20} className="mr-2" />
                 Начать обучение
@@ -78,7 +81,10 @@ const Index = () => {
               <Button 
                 size="lg" 
                 variant="outline"
-                onClick={() => setActiveTab('courses')}
+                onClick={() => {
+                  console.log('Clicked catalog');
+                  setActiveTab('courses');
+                }}
               >
                 <Icon name="BookOpen" size={20} className="mr-2" />
                 Каталог курсов
