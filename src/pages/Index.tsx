@@ -44,11 +44,7 @@ const Index = () => {
     setCourses(courses.filter(course => course.id !== id));
   };
 
-  const testResults = [
-    { name: 'Основы Python', score: 95, date: '15.01.2024' },
-    { name: 'HTML/CSS', score: 87, date: '12.01.2024' },
-    { name: 'JavaScript', score: 92, date: '10.01.2024' }
-  ];
+  const testResults: Array<{name: string; score: number; date: string}> = [];
 
   const filteredCourses = courses.filter(course =>
     course.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -70,11 +66,25 @@ const Index = () => {
               Платформа для онлайн обучения с интерактивными курсами, тестированием и персональным подходом
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+              <Button 
+                size="lg" 
+                className="bg-blue-600 hover:bg-blue-700"
+                onClick={() => {
+                  const coursesTab = document.querySelector('[data-value="courses"]') as HTMLElement;
+                  if (coursesTab) coursesTab.click();
+                }}
+              >
                 <Icon name="Play" size={20} className="mr-2" />
                 Начать обучение
               </Button>
-              <Button size="lg" variant="outline">
+              <Button 
+                size="lg" 
+                variant="outline"
+                onClick={() => {
+                  const coursesTab = document.querySelector('[data-value="courses"]') as HTMLElement;
+                  if (coursesTab) coursesTab.click();
+                }}
+              >
                 <Icon name="BookOpen" size={20} className="mr-2" />
                 Каталог курсов
               </Button>
