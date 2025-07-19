@@ -83,7 +83,7 @@ const CoursesSection = ({ courses, isAdmin, setActiveTab }: CoursesSectionProps)
                     onClick={() => alert('Подробная информация о курсе')}
                   >
                     <Icon name="BookOpen" size={16} />
-                  </Button>
+                  </button>
                 </div>
               </div>
             </CardContent>
