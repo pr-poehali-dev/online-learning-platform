@@ -54,7 +54,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-      <Header isAdmin={isAdmin} setIsAdmin={setIsAdmin} />
+      <Header isAdmin={isAdmin} setIsAdmin={setIsAdmin} setActiveTab={setActiveTab} />
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <section id="home" className="text-center mb-12">
@@ -113,7 +113,7 @@ const Index = () => {
           </TabsList>
 
           <TabsContent value="courses">
-            <CoursesSection courses={filteredCourses} isAdmin={isAdmin} />
+            <CoursesSection courses={filteredCourses} isAdmin={isAdmin} setActiveTab={setActiveTab} />
           </TabsContent>
 
           <TabsContent value="testing">

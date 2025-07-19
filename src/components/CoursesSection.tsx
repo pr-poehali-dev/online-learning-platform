@@ -19,9 +19,10 @@ interface Course {
 interface CoursesSectionProps {
   courses: Course[];
   isAdmin: boolean;
+  setActiveTab: (tab: string) => void;
 }
 
-const CoursesSection = ({ courses, isAdmin }: CoursesSectionProps) => {
+const CoursesSection = ({ courses, isAdmin, setActiveTab }: CoursesSectionProps) => {
   return (
     <section id="courses">
       <div className="flex justify-between items-center mb-8">
@@ -72,10 +73,18 @@ const CoursesSection = ({ courses, isAdmin }: CoursesSectionProps) => {
                 <Progress value={course.progress} className="h-2" />
                 
                 <div className="flex gap-2 pt-2">
-                  <Button className="flex-1" size="sm">
+                  <Button 
+                    className="flex-1" 
+                    size="sm"
+                    onClick={() => setActiveTab('testing')}
+                  >
                     {course.progress > 0 ? 'Продолжить' : 'Начать'}
                   </Button>
-                  <Button variant="outline" size="sm">
+                  <Button 
+                    variant="outline" 
+                    size="sm"
+                    onClick={() => alert('Подробная информация о курсе')}
+                  >
                     <Icon name="BookOpen" size={16} />
                   </Button>
                 </div>

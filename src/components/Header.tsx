@@ -4,9 +4,10 @@ import Icon from '@/components/ui/icon';
 interface HeaderProps {
   isAdmin: boolean;
   setIsAdmin: (isAdmin: boolean) => void;
+  setActiveTab: (tab: string) => void;
 }
 
-const Header = ({ isAdmin, setIsAdmin }: HeaderProps) => {
+const Header = ({ isAdmin, setIsAdmin, setActiveTab }: HeaderProps) => {
   return (
     <header className="bg-white shadow-sm border-b">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -21,12 +22,12 @@ const Header = ({ isAdmin, setIsAdmin }: HeaderProps) => {
           </div>
           
           <nav className="hidden md:flex space-x-6">
-            <a href="#home" className="text-gray-700 hover:text-blue-600 transition-colors">Главная</a>
-            <a href="#courses" className="text-gray-700 hover:text-blue-600 transition-colors">Курсы</a>
-            <a href="#testing" className="text-gray-700 hover:text-blue-600 transition-colors">Тестирование</a>
-            <a href="#profile" className="text-gray-700 hover:text-blue-600 transition-colors">Профиль</a>
-            <a href="#results" className="text-gray-700 hover:text-blue-600 transition-colors">Результаты</a>
-            <a href="#help" className="text-gray-700 hover:text-blue-600 transition-colors">Помощь</a>
+            <button onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} className="text-gray-700 hover:text-blue-600 transition-colors">Главная</button>
+            <button onClick={() => setActiveTab('courses')} className="text-gray-700 hover:text-blue-600 transition-colors">Курсы</button>
+            <button onClick={() => setActiveTab('testing')} className="text-gray-700 hover:text-blue-600 transition-colors">Тестирование</button>
+            <button onClick={() => setActiveTab('profile')} className="text-gray-700 hover:text-blue-600 transition-colors">Профиль</button>
+            <button onClick={() => setActiveTab('results')} className="text-gray-700 hover:text-blue-600 transition-colors">Результаты</button>
+            <button onClick={() => setActiveTab('help')} className="text-gray-700 hover:text-blue-600 transition-colors">Помощь</button>
           </nav>
 
           <div className="flex items-center space-x-4">
@@ -38,7 +39,7 @@ const Header = ({ isAdmin, setIsAdmin }: HeaderProps) => {
               <Icon name="Settings" size={16} className="mr-2" />
               {isAdmin ? 'Админ' : 'Войти как админ'}
             </Button>
-            <Button size="sm">
+            <Button size="sm" onClick={() => setActiveTab('profile')}>
               <Icon name="User" size={16} className="mr-2" />
               Профиль
             </Button>
